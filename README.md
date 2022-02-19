@@ -144,6 +144,8 @@ Português: port1.mean()
 # Construções de graficos simples:
 *Matematica vs Português: 
 * sns.countplot( x = mat2['Escola']); sns.countplot( x = port1['Escola']);
+![download](https://u![download](https://user-images.githubusercontent.com/93952706/154822411-1da1e4a2-9285-416c-b5eb-2a58e2815de5.png)
+ser-images.githubusercontent.com/93952706/154822402-13dfa348-ab0b-460c-ad51-c6ec4a8b227d.png)
 
 
 
