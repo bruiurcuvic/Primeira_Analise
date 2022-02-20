@@ -1,8 +1,9 @@
 # Primeira_Analise
 Essa analise é simples, e tem como objetivo apenas a implementação da aprendizagem em aulas.
 
-O estudo se trata da analise de duas escolas situadas em Portugal. A analise foi separada por materia.
-* Legenda: G1- Notas do primeiro perioso, G2- Notas do segundo perioso, G3- Notas do terceiro periodo. 
+O estudo se trata da analise de duas escolas situadas em Portugal. A analise foi separada por materia e logo em seguida por escola. Levando em consideração,
+que em ambas os alunos optão por apenas uma das materias, e alunos que escolheram as duas foram descartados da base de dados.
+* Legenda: G1- Notas do primeiro perioso, G2- Notas do segundo perioso, G3- Notas do terceiro periodo, GP e MS - Abreviação dos nomes das escolas.
 
 # Importando os pacotes:
 * import pandas as pd
@@ -143,9 +144,111 @@ Português: port1.mean()
 
 # Construções de graficos simples:
 *Matematica vs Português: 
-* sns.countplot( x = mat2['Escola']); sns.countplot( x = port1['Escola']);
-![download](https://u![download](https://user-images.githubusercontent.com/93952706/154822411-1da1e4a2-9285-416c-b5eb-2a58e2815de5.png)
-ser-images.githubusercontent.com/93952706/154822402-13dfa348-ab0b-460c-ad51-c6ec4a8b227d.png)
+* sns.countplot( x = mat2['Escola']);
+
+![download](https://user-images.githubusercontent.com/93952706/154822450-69b7741a-1b4b-4784-b0f7-66a46ba4f6e1.png)
+
+*  sns.countplot( x = port1['Escola']);
+
+![download](https://user-images.githubusercontent.com/93952706/154822485-46c51e0c-141a-40f1-8467-291d02a3827d.png)
+
+* sns.countplot( x = mat2['NivelRelacFamilia']);
+
+![download](https://user-images.githubusercontent.com/93952706/154822512-7a28e788-c8bc-4b2e-8385-dd512ee60508.png)
+
+* sns.countplot( x = port1['NivelRelacFamilia']);
+
+![download](https://user-images.githubusercontent.com/93952706/154822525-e205423a-5ef1-4ce5-8e56-ea57f5882825.png)
+
+* sns.countplot( x = mat2['Tempo_estudo']);
+
+![download](https://user-images.githubusercontent.com/93952706/154822569-6a4ac2d2-e86e-4285-ace1-7477a1a53479.png)
+
+* sns.countplot( x = port1['Tempo_estudo']);
+
+![download](https://user-images.githubusercontent.com/93952706/154822586-9a97c927-86f5-4063-a72b-dfacbbb359b1.png)
+
+* sns.countplot( x = mat2['Sexo']);
+
+![download](https://user-images.githubusercontent.com/93952706/154822631-e0d98615-4dae-42f9-ae61-31170ecb6f61.png)
+
+* sns.countplot( x = port1['Sexo']);
+
+![download](https://user-images.githubusercontent.com/93952706/154822640-e1e7d522-a6c8-41c4-bc19-cf3c8b08d855.png)
+
+# Graficos aonde mostram maior volume de dados.
+
+*Matematica vs Português
+
+* plt.hist(x = mat2['Idade']);
+
+![download](https://user-images.githubusercontent.com/93952706/154822664-a2d43d2a-65ef-45fb-8654-2e95fec06a75.png)
+
+* plt.hist(x = port1['Idade']);
+
+![download](https://user-images.githubusercontent.com/93952706/154822675-d57fc8e4-ef3e-45a4-96b7-eb87394d0e72.png)
+
+# Amostragem por conglomerado(agrupamento)
+
+*A analise a seguir, leva em consideração a separação por escola:
+
+* Amostra para filtrar por escola
+
+* tipo = mat2['Escola'].value_counts()
+-----------------------------------------
+* GP    349
+* MS     46
+* Name: Escola, dtype: int64
+----------------------------------
+* tipos = port1['Escola'].value_counts()
+--------------------------------------------
+* GP    423
+* MS    226
+* Name: Escola, dtype: int64
+
+Em matematica, separando por escola, quantos alunos estudaram menos que duas horas
+* escola = estudo['Escola'].value_counts()
+---------------------------------------------------
+* GP    89
+* MS    16
+* Name: Escola, dtype: int64
+---------------------------------------------------
+Em portugues, separando por escola, quantos alunos estudaram menos que duas horas
+* escolas = estudos['Escola'].value_counts()
+------------------------------------------------------
+* GP    119
+* MS     93
+* Name: Escola, dtype: int64
+------------------------------------------------------
+
+Em matematica, separando por escola, quantos alunos são do sexo masculino
+* esc = sexM['Escola'].value_counts()
+------------------------------------------------------
+* GP    166
+* MS     21
+* Name: Escola, dtype: int64
+---------------------------------------------
+Em matematica, separando por escola, quantos alunos são do sexo feminino
+* esco = sexF['Escola'].value_counts()
+------------------------------------------------------
+* GP    183
+* MS     25
+* Name: Escola, dtype: int64
+-----------------------------------------------------
+
+Em portugues, separando por escola, quantos alunos são do sexo masculino
+* escM = sexoM['Escola'].value_counts()
+----------------------------------------------
+* GP    186
+* MS     80
+* Name: Escola, dtype: int64
+----------------------------------------------
+Em portugues, separando por escola, quantos alunos são do sex feminino
+* escF = sexoF['Escola'].value_counts()
+--------------------------------------------
+* GP    237
+* MS    146
+* Name: Escola, dtype: int64
 
 
-
+*** Em processo ***
